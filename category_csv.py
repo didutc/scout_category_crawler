@@ -16,7 +16,7 @@ class category:  # 카테고리에서 서브 카테고리 없으면 출력 불�
         self.name_array = []
         self.num = input('카테고리넘버: ')
 
-    def Run(self):  # 파일 실행 함수
+    def Run(self):  # 파일 실행 함수vb=
         filename_list = self.Input()
         name_list_list, id_list_list = self.Scoutcategory(filename_list)
         reverseCategory_list = self.Reversecategory(filename_list)

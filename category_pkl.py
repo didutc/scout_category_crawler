@@ -8,7 +8,7 @@ import urllib.request
 import warnings
 from alive_progress import alive_bar
 import os
-
+import doubleagent
 
 class category:  # 카테고리에서 서브 카테고리 없으면 출력 불가
     def __init__(self):
@@ -193,16 +193,10 @@ class category:  # 카테고리에서 서브 카테고리 없으면 출력 불�
         finalname_list = []
         finalid_list = []
         for filename, name_list, id_list in zip(filename_list, name_list_list, id_list_list):
-            #
+            doubleagent.picklemaker(filename+'.pkl',[name_list,id_list])
 
-            data = pd.DataFrame({"이름": name_list, "id": id_list})
-
-            data.to_csv(
-                path + "\\" + filename + "_category.csv",
-                mode="w",
-                encoding="utf-8-sig",
-                index=False,
-            )
+       
+            
 
 
 category = category()
